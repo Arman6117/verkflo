@@ -4,7 +4,7 @@ import React from 'react'
 const SignUpPage = () => {
   return (
       <div className='h-screen w-screen flex justify-center items-center'>
-        <SignUp afterSignOutUrl={'/dashboard'} fallbackRedirectUrl={'/sign-in'}/>
+        <SignUp afterSignOutUrl={'/'} fallbackRedirectUrl={'/dashboard'}/>
       </div>
   )
 }
