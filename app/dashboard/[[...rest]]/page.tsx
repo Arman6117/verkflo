@@ -1,15 +1,18 @@
-import React from 'react'
+"use client";
+import React, { useState } from "react";
+import Navbar from "../_components/navbar";
+import AllProjects from "../_components/all-projects";
+import LastUpdated from "../_components/last-updated";
 
-import { SignOutButton } from '@clerk/nextjs'
-
-import Navbar from '../_components/navbar'
-
-const Dashboard = () => {
+const DashboardPage = () => {
+  const [activeTab, selectActiveTab] = useState("projects");
   return (
-    <div className=''>
-      <Navbar/>
-    </div>
-  )
-}
+    <React.Fragment>
+      <Navbar activeTab={activeTab} selectActiveTab={selectActiveTab} />
+      {activeTab === 'projects' && <AllProjects/>}
+      {activeTab === 'last-updated' && <LastUpdated/>}
+    </React.Fragment>
+  );
+};
 
-export default Dashboard
+export default DashboardPage;
