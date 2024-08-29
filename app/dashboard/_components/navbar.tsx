@@ -1,7 +1,10 @@
-import Logo from "@/components/logo";
-import { UserButton, useUser } from "@clerk/nextjs";
-import clsx from "clsx";
 import React from "react";
+
+import clsx from "clsx";
+
+import { UserButton, useUser } from "@clerk/nextjs";
+
+import Logo from "@/components/logo";
 
 interface NavbarProps {
   activeTab: string;
@@ -20,7 +23,7 @@ const Navbar = ({ activeTab, selectActiveTab }: NavbarProps) => {
         </div>
         <div className="flex gap-7 ml-2 sm:ml-10 ">
           <div
-            className={clsx(
+            className={clsx( 
               "transition-all sm:text-base text-sm cursor-pointer",
               activeTab === "projects"
                 ? "border-b-4 border-white rounded-sm font-semibold"

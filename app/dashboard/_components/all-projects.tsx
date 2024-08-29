@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import CreateProjectButton from "./create-project-button";
+
 
 const AllProjects = () => {
   return (
-    <div className='m24'>AllProjects</div>
-  )
-}
+    <div>
+      <CreateProjectButton />
+    </div>
+  );
+};
 
-export default AllProjects
+export default AllProjects;
