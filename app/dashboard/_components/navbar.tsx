@@ -15,15 +15,17 @@ const Navbar = ({ activeTab, selectActiveTab }: NavbarProps) => {
 
   if (!user) return null;
   return (
-    <div className=" bg-[rgb(24,24,24)] px-6 pt-5 pb-2 w-screen flex justify-between items-center">
-      <div className="flex gap-7">
+    <div className=" bg-[rgb(24,24,24)] px-6 pt-5 pb-2  flex justify-between items-center">
+      <div className="flex gap-7 justify-center">
         <div className="flex gap-8">
-          <Logo />
-          <span className="font-medium sm:text-base text-xs">Welcome 👋 {user?.firstName}</span>
+          {/* <Logo /> */}
+          <span className="font-medium sm:text-base text-sm">
+            <span className="sm:visible hidden">Welcome</span> 👋 {user?.firstName}
+          </span>
         </div>
         <div className="flex gap-7 ml-2 sm:ml-10 ">
           <div
-            className={clsx( 
+            className={clsx(
               "transition-all sm:text-base text-sm cursor-pointer",
               activeTab === "projects"
                 ? "border-b-4 border-white rounded-sm font-semibold"
@@ -47,7 +49,7 @@ const Navbar = ({ activeTab, selectActiveTab }: NavbarProps) => {
         </div>
       </div>
       <div>
-        <UserButton/>
+        <UserButton />
       </div>
     </div>
   );

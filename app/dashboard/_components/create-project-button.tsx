@@ -23,6 +23,7 @@ const CreateProjectButton = () => {
   const [clientEmail, setClientEmail] = useState("");
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
+  const router  = useRouter();
 
   function resetForm() {
     setProjectName("");
@@ -46,7 +47,7 @@ const CreateProjectButton = () => {
       .then((id) => {
         console.log("Project created id: ", id);
         resetForm();
-        //TODO:Push user to project page
+        router.push(`/project/${id}`)
       })
       .catch((err) => {
         resetForm();
@@ -106,7 +107,7 @@ const CreateProjectButton = () => {
               </div>
               <DialogFooter>
                 <div className="flex gap-7">
-                  <DialogClose className="flex gap-3">
+                  <DialogClose className="flex gap-3" >
                     <Button variant={"ghost"}>Cancel</Button>
                     <Button type="submit" onClick={onClick}>
                       Save

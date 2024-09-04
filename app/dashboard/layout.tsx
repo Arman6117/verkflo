@@ -7,7 +7,7 @@ interface DashboardPageLayoutProps {
 }
 const DashboardPageLayout = ({children}:DashboardPageLayoutProps) => {
   return (
-    <main className='h-screen   bg-gradient-to-b from-neutral-900 to-slate-950'>
+    <main className='sm:h-screen   bg-gradient-to-b from-neutral-900 to-slate-950'>
        
         {children}
     </main>

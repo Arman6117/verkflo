@@ -10,7 +10,7 @@ export default function Home() {
     <React.Fragment>
       <main className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-indigo-900 via-indigo-800 to-purple-900 text-white px-4">
         <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8">
+          <h1 className="text-2xl md:text-5xl lg:text-6xl font-bold mb-8">
             Seamlessly track and share project updates in{" "}
             <span className="text-yellow-300 underline decoration-2 underline-offset-4">
               real-time
@@ -19,7 +19,7 @@ export default function Home() {
             course
           </h1>
 
-          <p className="text-sm px-40 mb-12 opacity-90">
+          <p className="text-sm sm:px-40 mb-12 opacity-90">
             Streamline your workflow and boost productivity with our intuitive
             project management tool.
           </p>
