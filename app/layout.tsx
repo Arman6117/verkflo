@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ConvexClientProvider } from "@/provider/convex-client-provider";
 import clsx from "clsx";
+import { Toaster } from "@/components/ui/sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,6 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={clsx('dark bg-gradient-to-br from-indigo-900 via-indigo-800 to-purple-900',inter.className)}>
         <ConvexClientProvider>
+          <Toaster/>
           {children}
           </ConvexClientProvider>
       </body>

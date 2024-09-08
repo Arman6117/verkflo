@@ -89,6 +89,7 @@ const ProjectPageNav = ({ id }: ProjectPageNavProps) => {
           <ProjectDetails id={id} />
         </SheetContent>
       </Sheet>
+      
     </div>
   );
 };

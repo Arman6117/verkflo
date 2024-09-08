@@ -1,5 +1,6 @@
 import { v } from "convex/values";
 import { mutation, query } from "./_generated/server";
+import { api } from "./_generated/api";
 
 export const createProject = mutation({
   args: {
@@ -28,6 +29,47 @@ export const createProject = mutation({
   },
 });
 
+export const update = mutation({
+  args: {
+    id: v.id("projects"),
+    name: v.optional(v.string()),
+    cEmail: v.optional(v.string()),
+    endDate: v.optional(v.string()),
+  },
+  handler: async (ctx, args) => {
+    const identity = ctx.auth.getUserIdentity();
+
+    if (!identity) {
+      throw new Error("Unauthorized");
+    }
+
+  
+    const name = args.name?.trim();
+    if (name!.length > 20) {
+      throw new Error("Name cannot contain more than 20 characters");
+    }
+
+    const project = await ctx.db.patch(args.id, {
+      name,
+      cEmail: args.cEmail,
+      endDate: args.endDate,
+    });
+
+    return project;
+  },
+});
+export const remove = mutation({
+  args:{id:v.id("projects")},
+  handler: async (ctx,args) => {
+     const identity = ctx.auth.getUserIdentity();
+     if(!identity) {
+      throw new Error("Unauthorized")
+     }
+
+     const project = await ctx.db.delete(args.id)
+     return project;
+  }
+})
 export const get = query({
   args: { id: v.id("projects") },
   handler: async (ctx, args) => {
