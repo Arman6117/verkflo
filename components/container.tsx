@@ -8,7 +8,7 @@ const Container = ({ children, className }: ContainerProps) => {
   return (
     <section
       className={clsx(
-        "flex   h-52 bg-neutral-100/10 outline outline-neutral-100 rounded-md",
+        "flex   h-56 bg-gray-800 outline outline-neutral-100 rounded-md",
         className
       )}
     >

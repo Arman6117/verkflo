@@ -5,7 +5,7 @@ interface ProjectPageLayoutProps {
 }
 const ProjectPageLayout = ({ children }: ProjectPageLayoutProps) => {
   return (
-    <div className="h-screen bg-gradient-to-b from-neutral-900 to-slate-950">
+    <div className="h-screen bg-gradient-to-b from-neutral-950 via-slate-950 to-slate-900">
       {children}
     </div>
   );
