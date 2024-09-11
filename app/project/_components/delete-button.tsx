@@ -32,7 +32,7 @@ const DeleteButton = ({id}:DeleteButtonProps) => {
         onClick={handleDelete}
       >
         <FaTrashCan />
-        <span>Delete Project</span>
+        <span className="hidden md:inline">Delete Project</span>
       </Button>
     </>
   );

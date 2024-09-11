@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Noto_Sans } from "next/font/google";
 import "./globals.css";
 import { ConvexClientProvider } from "@/provider/convex-client-provider";
 import clsx from "clsx";
 import { Toaster } from "@/components/ui/sonner";
 
-const inter = Inter({ subsets: ["latin"] });
+const noto = Noto_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={clsx('dark bg-gradient-to-br from-indigo-900 via-indigo-800 to-purple-900',inter.className)}>
+      <body className={clsx('dark bg-gradient-to-br from-indigo-900 via-indigo-800 to-purple-900',noto.className)}>
         <ConvexClientProvider>
           <Toaster/>
           {children}

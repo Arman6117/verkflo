@@ -48,8 +48,8 @@ const ProjectDetails = ({ id }: ProjectDetailsProps) => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row md:space-x-10 items-center justify-center py-6 px-4">
-      <div className="md:w-1/3 w-full mb-6 md:mb-0">
+    <div className="flex flex-col md:flex-row md:space-x-10 items-center justify-center py-6 md:px-4 ">
+      <div className="md:w-1/3 flex justify-center w-full mb-6 md:mb-0">
         <ProjectProgress />
       </div>
 
