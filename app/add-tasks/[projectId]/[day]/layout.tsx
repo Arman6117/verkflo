@@ -1,4 +1,4 @@
-import AddTaskPageNav from "../_components/add-task-page-nav";
+import AddTaskPageNav from "../../_components/add-task-page-nav";
 
 interface AddTasksPageLayoutProps {
   children: React.ReactNode;

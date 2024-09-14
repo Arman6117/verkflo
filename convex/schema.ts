@@ -15,16 +15,21 @@ export default defineSchema({
     title: v.string(),
     description: v.optional(v.string()),
     authorId: v.string(),
-    projectId: v.string(),
-    media: v.optional(v.string()),
-    completed: v.boolean(),
+    projectId: v.id('projects'),
     subTasks: v.optional(
-      v.array(
+      
         v.object({
           title: v.string(),
           description: v.string(),
         })
-      )
+      
     ),
   }),
+  completedTasks:defineTable({
+    projectId:v.id('projects'),
+    authorId:v.string(),
+    taskId:v.id('tasks'),
+    media: v.optional(v.string()),
+  }),
+  
 });

@@ -15,7 +15,7 @@ const ProjectPage = ({ params }: ProjectPageProps) => {
           <ProjectPageNav id={params.projectId} />
         </div>
         <div className="ml-5 mt-14">
-          <DayCardList/>
+          <DayCardList params={params}/>
         </div>
       </div>
     </div>

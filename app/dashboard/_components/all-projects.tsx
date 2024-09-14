@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CreateProjectButton from "./create-project-button";
 import ProjectList from "./project-list";
 import { useSession } from "@clerk/nextjs";
@@ -8,6 +8,11 @@ import { api } from "@/convex/_generated/api";
 const AllProjects = () => {
   const { session } = useSession();
 
+  useEffect(() => {
+    if (!session) {
+      <div>No session</div>;
+    }
+  });
   const data = useQuery(api.projects.get, { authorId: session?.user.id! });
   return (
     <div className="flex flex-wrap overflow-hidden gap-7 sm:justify-normal justify-center">

@@ -4,6 +4,7 @@ import "./globals.css";
 import { ConvexClientProvider } from "@/provider/convex-client-provider";
 import clsx from "clsx";
 import { Toaster } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const noto = Noto_Sans({ subsets: ["latin"] });
 
@@ -19,11 +20,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={clsx('dark bg-gradient-to-br from-indigo-900 via-indigo-800 to-purple-900',noto.className)}>
+      <body
+        className={clsx(
+          "dark bg-gradient-to-br from-indigo-900 via-indigo-800 to-purple-900",
+          noto.className
+        )}
+      >
         <ConvexClientProvider>
-          <Toaster/>
-          {children}
-          </ConvexClientProvider>
+          <Toaster />
+          <TooltipProvider>{children}</TooltipProvider>
+        </ConvexClientProvider>
       </body>
     </html>
   );
