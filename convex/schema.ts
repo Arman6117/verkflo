@@ -15,12 +15,13 @@ export default defineSchema({
     title: v.string(),
     description: v.optional(v.string()),
     authorId: v.string(),
+    dayNo:v.string(),
     projectId: v.id('projects'),
     subTasks: v.optional(
       
         v.object({
-          title: v.string(),
-          description: v.string(),
+          subtaskTitle: v.string(),
+          subtaskDescription: v.string(),
         })
       
     ),

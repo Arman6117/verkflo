@@ -12,7 +12,7 @@ const font = Source_Code_Pro({
 interface AddTasksPageProps {
   params: {
     projectId: string;
-    dayNo: string;
+    day: string;
   };
 }
 const AddTaskPage = ({ params }: AddTasksPageProps) => {
@@ -21,7 +21,7 @@ const AddTaskPage = ({ params }: AddTasksPageProps) => {
       className={`w-full relative overflow-hidden text-center flex p-2  bg-gray-800/30 md:p-4 h-full rounded-lg md:border- border-neutral-50 shadow-xl space-y-6 ${font.className}`}
     >
       <div className="h-full w-full justify-center fle ">
-        <AddTaskModal />
+        <AddTaskModal params={params} />
         <ScrollArea className=" absolute mt-2 h-full ">
           <TaskCardList />
         </ScrollArea>

@@ -7,10 +7,11 @@ export const createTask = mutation({
     description: v.string(),
     authorId: v.string(),
     projectId: v.id("projects"),
+    dayNo: v.string(),
     subTasks: v.optional(
       v.object({
-        title: v.string(),
-        description: v.string(),
+        subtaskTitle: v.string(),
+        subtaskDescription: v.string(),
       })
     ),
   },
@@ -26,9 +27,15 @@ export const createTask = mutation({
       authorId: args.authorId,
       subTasks: args.subTasks,
       projectId: args.projectId,
+      dayNo: args.dayNo,
     };
     const task = await ctx.db.insert("tasks", {
-      ...values,
+      title: args.title,
+      description: args.description,
+      authorId: args.authorId,
+      subTasks: args.subTasks,
+      projectId: args.projectId,
+      dayNo: args.dayNo,
     });
     return task;
   },

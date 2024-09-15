@@ -1,3 +1,4 @@
+import { Toaster } from "@/components/ui/sonner";
 import AddTaskPageNav from "../../_components/add-task-page-nav";
 
 interface AddTasksPageLayoutProps {
@@ -6,6 +7,7 @@ interface AddTasksPageLayoutProps {
 const AddTasksPageLayout = ({ children }: AddTasksPageLayoutProps) => {
   return (
     <main className=" h-screen w-screen  bg-gradient-to-b from-neutral-950 via-slate-950 flex gap-6 to-slate-900 p-5">
+      <Toaster/>
        <AddTaskPageNav/>
       {children}
     </main>
