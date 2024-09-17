@@ -10,27 +10,24 @@ export default defineSchema({
     authorId: v.string(),
     authorName: v.string(),
   }).index("by_user", ["authorId"]),
-  
+
   tasks: defineTable({
     title: v.string(),
     description: v.optional(v.string()),
     authorId: v.string(),
-    dayNo:v.string(),
-    projectId: v.id('projects'),
+    dayNo: v.string(),
+    projectId: v.id("projects"),
     subTasks: v.optional(
-      
-        v.object({
-          subtaskTitle: v.string(),
-          subtaskDescription: v.string(),
-        })
-      
+      v.object({
+        subtaskTitle: v.string(),
+        subtaskDescription: v.string(),
+      })
     ),
-  }),
-  completedTasks:defineTable({
-    projectId:v.id('projects'),
-    authorId:v.string(),
-    taskId:v.id('tasks'),
+  }).index("by_project", ["projectId"]),
+  completedTasks: defineTable({
+    projectId: v.id("projects"),
+    authorId: v.string(),
+    taskId: v.id("tasks"),
     media: v.optional(v.string()),
   }),
-  
 });

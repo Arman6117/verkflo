@@ -4,6 +4,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import AddTaskModal from "../../_components/add-task-modal";
 
 import TaskCardList from "../../_components/task-card-list";
+import { Id } from "@/convex/_generated/dataModel";
 
 const font = Source_Code_Pro({
   subsets: ["latin"],
@@ -11,7 +12,7 @@ const font = Source_Code_Pro({
 });
 interface AddTasksPageProps {
   params: {
-    projectId: string;
+    projectId: Id<'projects'>;
     day: string;
   };
 }
@@ -23,7 +24,7 @@ const AddTaskPage = ({ params }: AddTasksPageProps) => {
       <div className="h-full w-full justify-center fle ">
         <AddTaskModal params={params} />
         <ScrollArea className=" absolute mt-2 h-full ">
-          <TaskCardList />
+          <TaskCardList  params={params} />
         </ScrollArea>
       </div>
     </div>

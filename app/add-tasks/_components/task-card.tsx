@@ -1,7 +1,14 @@
-'use client'
 import React from "react";
 import MenuButtons from "./menu-buttons";
+import { Id } from "@/convex/_generated/dataModel";
 
+interface TaskCardProps {
+  taskId: Id<"tasks">;
+  title: string;
+  description?: string;
+  subtaskTitle?: string;
+  subtaskDescription?: string;
+}
 const TaskCard = () => {
   return (
     <div className="mt-14 flex flex-col justify-center items-center">

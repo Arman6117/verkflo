@@ -17,6 +17,7 @@ import type {
 import type * as project from "../project.js";
 import type * as projects from "../projects.js";
 import type * as task from "../task.js";
+import type * as tasks from "../tasks.js";
 
 /**
  * A utility for referencing Convex functions in your app's API.
@@ -30,6 +31,7 @@ declare const fullApi: ApiFromModules<{
   project: typeof project;
   projects: typeof projects;
   task: typeof task;
+  tasks: typeof tasks;
 }>;
 export declare const api: FilterApi<
   typeof fullApi,
